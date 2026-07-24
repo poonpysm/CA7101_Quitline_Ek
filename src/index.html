@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Quitline1600: Discreet & Actionable Personal Cessation Planning Portal." />
+  <title>Quitline1600 - Personal Planning Portal</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+
+  <!-- Skip to Main Content Link for Keyboard Accessibility -->
+  <a href="#main-content" class="skip-link" data-i18n="skip-link">Skip to Main Content</a>
+
+  <!-- Sticky Global Header -->
+  <header>
+    <div class="container header-wrap">
+      <a href="#" class="logo" aria-label="Quitline1600 Homepage">
+        <div class="logo-icon">
+          <div class="logo-inner"></div>
+        </div>
+        <span data-i18n="logo-title">Quitline1600</span>
+      </a>
+
+      <div class="header-actions">
+        <!-- Language Selection Segmented Control -->
+        <span class="badge badge-success" id="security-pill" title="No browser tracking cookies active">
+          <span class="status-dot"></span> <span data-i18n="guest-mode">Guest Mode Active</span>
+        </span>
+        <div class="lang-selector" role="group" aria-label="Language selection">
+          <button class="lang-btn active" id="lang-en" data-lang="en">EN</button>
+          <button class="lang-btn" id="lang-th" data-lang="th">TH</button>
+        </div>
+        <button class="theme-toggle" id="theme-toggle-btn" aria-label="Toggle visual theme">🌗</button>
+        <button class="btn quick-exit" id="quick-exit-btn" title="Press ESC key to exit instantly" data-i18n="exit-btn"
+          aria-label="Exit page immediately to search engine">
+          Exit Page (ESC)
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" id="main-content">
+
+    <!-- Hero & Interactive Plan Builder Section (Visual Showcase Mockup Layout) -->
+    <section class="hero-showcase-container" aria-label="Hero and Quit Plan Builder">
+
+      <!-- Background SVG Lines -->
+      <div class="hero-bg-lines" aria-hidden="true">
+        <svg viewBox="0 0 1200 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="900" cy="200" r="400" stroke="hsla(217, 91%, 60%, 0.08)" stroke-width="1" />
+          <circle cx="900" cy="200" r="250" stroke="hsla(217, 91%, 60%, 0.05)" stroke-width="1" />
+          <circle cx="300" cy="450" r="300" stroke="hsla(217, 91%, 60%, 0.05)" stroke-width="1" />
+        </svg>
+      </div>
+
+      <div class="hero-top-grid">
+        <!-- Left: Massive Heading -->
+        <div class="hero-title-block">
+          <div class="hero-subtitle" data-i18n="hero-subtitle">Confidential Support</div>
+          <h1 class="hero-showcase-title" id="hero-title" data-i18n="hero-title">
+            <span class="hero-bracket">}</span> Professional Cessation<br />
+            Planning
+          </h1>
+          <div class="hero-cta-buttons">
+            <a href="#live-chat-card" class="btn btn-primary" data-i18n="cta-chat">AI Live Chat</a>
+            <a href="#schedule-call-card" class="btn btn-secondary" data-i18n="cta-call">Schedule a Private Call</a>
+          </div>
+          <p class="hero-privacy-note"
+            style="font-size: var(--text-xs); color: var(--text-secondary); margin-top: var(--space-3);"
+            data-i18n="hero-privacy-note">
+            🔒 100% anonymous. We do not store your data or log your IP address.
+          </p>
+        </div>
+
+        <!-- Right: Clinical Badges & PDF Download Strategy -->
+        <div class="hero-sliders-block">
+          <div class="hero-subtitle" data-i18n="clinical-ref-heading">Clinical References</div>
+          <!-- Clinical Reference Logos/Badges -->
+          <div class="clinical-badges-row"
+            style="display: flex; gap: 8px; margin-bottom: var(--space-4); align-items: center; justify-content: space-around; flex-wrap: wrap;">
+            <span class="badge"
+              style="font-size: 20px; padding: 12px 20px; background: var(--bg-surface-elevated); border: 1px solid var(--border-muted); color: var(--text-primary);">🏛️
+              CDC Guidelines</span>
+            <span class="badge"
+              style="font-size: 20px; padding: 12px 20px; background: var(--bg-surface-elevated); border: 1px solid var(--border-muted); color: var(--text-primary);">🌐
+              WHO Cessation</span>
+            <span class="badge"
+              style="font-size: 20px; padding: 12px 20px; background: var(--bg-surface-elevated); border: 1px solid var(--border-muted); color: var(--text-primary);">🩺
+              Mayo Clinic</span>
+          </div>
+
+          <!-- PDF Download Button -->
+          <button class="btn btn-secondary btn-compact-download" id="download-plan-btn" data-i18n="download-btn">
+            Download Quit Plan (Masked PDF)
+          </button>
+        </div>
+      </div>
+
+      <!-- Bottom: Docked Showcases Grid showing 3 main Security & Privacy pillars -->
+      <div class="hero-docked-cards">
+        <!-- Card 1: Local Guest Storage -->
+        <div class="docked-card card-privacy">
+          <div class="docked-val" data-i18n="docked-sec-1-title">LOCAL</div>
+          <div class="docked-label" data-i18n="docked-sec-1-label">Guest Mode (Local Only)</div>
+          <div class="docked-icons-row">
+            <span class="badge badge-success" style="font-size: 10px; padding: 2px 6px;">🔒 GUEST</span>
+          </div>
+        </div>
+
+        <!-- Card 2: Chat Encryption (Active by default in center) -->
+        <div class="docked-card card-privacy active">
+          <div class="docked-val" data-i18n="docked-sec-2-title">SECURE</div>
+          <div class="docked-label" data-i18n="docked-sec-2-label">Encrypted Live Chat</div>
+          <div class="docked-icons-row">
+            <span class="badge badge-success" style="font-size: 10px; padding: 2px 6px;">🛡️ WIPED</span>
+          </div>
+        </div>
+
+        <!-- Card 3: Caller Masking -->
+        <div class="docked-card card-privacy">
+          <div class="docked-val" data-i18n="docked-sec-3-title">MASKED</div>
+          <div class="docked-label" data-i18n="docked-sec-3-label">Discreet Call Protocol</div>
+          <div class="docked-icons-row">
+            <span class="badge badge-success" style="font-size: 10px; padding: 2px 6px;">📞 COVER</span>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Evidence-Based "How-To" Guidelines Section -->
+    <section class="guidelines-section" aria-labelledby="guidelines-title">
+      <div class="section-title-wrap">
+        <div class="section-subtitle" data-i18n="guidelines-subtitle">Clinical Action Steps</div>
+        <h2 id="guidelines-title" data-i18n="guidelines-title">Quick Step-by-Step Guidelines</h2>
+      </div>
+
+      <div class="timeline-grid">
+        <!-- Card 1: NRT Dosing -->
+        <div class="timeline-card">
+          <div class="timeline-graphic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" aria-hidden="true">
+              <path d="M10.5 20.5l10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7z" />
+              <path d="M8.5 8.5l7 7" />
+            </svg>
+          </div>
+          <div class="timeline-time" data-i18n="guide-card-1-tag">Clinical Step 1</div>
+          <div class="timeline-stat" data-i18n="guide-card-1-title">NRT Dosing Protocols</div>
+          <p class="timeline-desc" data-i18n="guide-card-1-desc">Use patch (21mg) or gum (2mg) to maintain steady plasma
+            levels during work hours.</p>
+        </div>
+
+        <!-- Card 2: Environment Clearing -->
+        <div class="timeline-card">
+          <div class="timeline-graphic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" aria-hidden="true">
+              <polyline points="3 6 5 6 21 6"></polyline>
+              <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+            </svg>
+          </div>
+          <div class="timeline-time" data-i18n="guide-card-2-tag">Clinical Step 2</div>
+          <div class="timeline-stat" data-i18n="guide-card-2-title">Environment Trigger Clearing</div>
+          <p class="timeline-desc" data-i18n="guide-card-2-desc">Remove all ashtrays, lighters, and vehicle tobacco
+            residues. Replace with neutral essential mist or mints.</p>
+        </div>
+
+        <!-- Card 3: Behavioral Substitution -->
+        <div class="timeline-card">
+          <div class="timeline-graphic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" aria-hidden="true">
+              <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67" />
+            </svg>
+          </div>
+          <div class="timeline-time" data-i18n="guide-card-3-tag">Clinical Step 3</div>
+          <div class="timeline-stat" data-i18n="guide-card-3-title">Behavioral Substitution</div>
+          <p class="timeline-desc" data-i18n="guide-card-3-desc">Substitute oral smoking cues with toothpicks or ice
+            water sips to satisfy the throat swallowing reflex during meetings.</p>
+        </div>
+
+        <!-- Card 4: Trigger Peak Management -->
+        <div class="timeline-card">
+          <div class="timeline-graphic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg>
+          </div>
+          <div class="timeline-time" data-i18n="guide-card-4-tag">Clinical Step 4</div>
+          <div class="timeline-stat" data-i18n="guide-card-4-title">Craving Peak Management</div>
+          <p class="timeline-desc" data-i18n="guide-card-4-desc">Physical urges peak within 3 minutes. Apply 3-minute
+            delay tactics and two quick nasal inhales followed by slow exhales.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Coping Toolkit Section (breathing bubble + accordion list) -->
+    <section class="coping-section" aria-labelledby="coping-title">
+      <div class="section-title-wrap">
+        <div class="section-subtitle" data-i18n="coping-subtitle">Coping & Stress Management</div>
+        <h2 id="coping-title" data-i18n="coping-title">Emergency Toolkit & Context Guides</h2>
+      </div>
+
+      <div class="coping-layout">
+        <!-- Left: Box breathing bubble -->
+        <div class="breathing-box">
+          <h3 class="card-title" data-i18n="buster-title">30-Second Craving Buster</h3>
+          <p style="font-size: var(--text-xs); color: var(--text-secondary); margin: 0 var(--space-4);"
+            data-i18n="buster-desc">
+            Manage acute smoking urges during meetings or stressful decision points using standard box breathing.
+          </p>
+
+          <!-- Circle animation component -->
+          <div class="breathing-container" id="breathing-box-container">
+            <div class="breathing-circle-outer"></div>
+            <div class="breathing-circle-inner">
+              <span class="breathing-cycle-label" id="timer-number">--</span>
+            </div>
+          </div>
+
+          <div class="breathing-guide-text" id="breathing-instruction" data-i18n="breathing-guide-idle">Press Start to
+            begin breathing loop</div>
+
+          <div class="breathing-pills-row">
+            <div class="breathing-pill" id="pill-1" title="Inhale"></div>
+            <div class="breathing-pill" id="pill-2" title="Hold"></div>
+            <div class="breathing-pill" id="pill-3" title="Exhale"></div>
+            <div class="breathing-pill" id="pill-4" title="Hold"></div>
+          </div>
+
+          <button class="btn btn-secondary" id="breathing-start-btn" data-i18n="breathing-start-btn">Start Breathing
+            Guide</button>
+        </div>
+
+        <!-- Right: Collapsible Accordion Context Checklists -->
+        <div class="accordion">
+          <div class="accordion-item" id="accordion-1">
+            <details open>
+              <summary data-i18n="acc-summary-1">Managing Urges During High-Stakes Meetings</summary>
+              <div class="details-content">
+                <p data-i18n="acc-desc-1">Keep focused and avoid giving away cravings under pressure:</p>
+                <ul>
+                  <li data-i18n="acc-1-li-1"><strong>Delay Tactically:</strong> Cravings peak within 3 minutes. Commit
+                    to
+                    waiting out the next agenda item.</li>
+                  <li data-i18n="acc-1-li-2"><strong>Hydrate Quietly:</strong> Take slow, measured sips of ice water to
+                    trigger the physical swallowing reflex, distracting the throat craving.</li>
+                  <li data-i18n="acc-1-li-3"><strong>Dynamic Posture:</strong> Anchor your feet flat on the floor,
+                    relaxing your shoulders to reduce physical tension.</li>
+                  <li data-i18n="acc-1-li-4"><strong>Discreet Breathing:</strong> Take slow, silent abdominal breaths
+                    through the nose. Do not hold your breath.</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+
+          <div class="accordion-item" id="accordion-2">
+            <details>
+              <summary data-i18n="acc-summary-2">Coping with Decision-Stress Points</summary>
+              <div class="details-content">
+                <p data-i18n="acc-desc-2">Break the connection between stress and nicotine triggers:</p>
+                <ul>
+                  <li data-i18n="acc-2-li-1"><strong>Step Away:</strong> Excuse yourself for a 2-minute "operational
+                    check" or phone call to break the immediate visual trigger environment.</li>
+                  <li data-i18n="acc-2-li-2"><strong>Physiological Sigh:</strong> Take two quick inhales through the
+                    nose,
+                    followed by a long, slow exhale through the mouth. This instantly downregulates the nervous system.
+                  </li>
+                  <li data-i18n="acc-2-li-3"><strong>Scribble Action:</strong> Channel restless finger energy into
+                    writing
+                    notes or organizing physical papers rather than holding a cigarette.</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+
+          <div class="accordion-item" id="accordion-3">
+            <details>
+              <summary data-i18n="acc-summary-3">Handling the Morning & Evening Commute</summary>
+              <div class="details-content">
+                <p data-i18n="acc-desc-3">Modify driving or transit habits to eliminate associated smoking cues:</p>
+                <ul>
+                  <li data-i18n="acc-3-li-1"><strong>Substitute Activity:</strong> Keep a toothpick, organic mint, or
+                    sugar-free lozenge inside the vehicle console.</li>
+                  <li data-i18n="acc-3-li-2"><strong>Clean Vehicle Environment:</strong> Remove any car ashtrays,
+                    lighters, or residues, and use a neutral essential oil mist.</li>
+                  <li data-i18n="acc-3-li-3"><strong>Vocal Release:</strong> Sing along to music or listen to high-focus
+                    audiobooks to keep oral and mental faculties occupied.</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Help & Support Channels Section -->
+    <section class="support-section" aria-labelledby="support-title">
+      <div class="section-title-wrap">
+        <div class="section-subtitle" data-i18n="support-subtitle">Human Support</div>
+        <h2 id="support-title" data-i18n="support-title">Secure Cessation Counseling</h2>
+      </div>
+
+      <div class="channels-grid">
+        <!-- Left: Anonymous Chat Box Simulator -->
+        <div class="card" id="live-chat-card">
+          <div class="card-header">
+            <h3 class="card-title" data-i18n="chat-title">Encrypted Live Chat</h3>
+            <span class="badge badge-success">
+              <span class="status-dot"></span> <span data-i18n="chat-status">Available</span>
+            </span>
+          </div>
+          <div class="card-body">
+            <div class="chat-window">
+              <div class="chat-header">
+                <span data-i18n="chat-secure">Secure E2E Connection Verified</span>
+                <span data-i18n="chat-wait">Wait: ~0 min</span>
+              </div>
+              <div class="chat-history" id="chat-history-list">
+                <!-- Default welcome text loaded dynamically to adapt language selection -->
+              </div>
+              <div class="chat-quick-prompts">
+                <button class="chat-prompt-btn" id="chat-prompt-plan" data-i18n="chat-cta-create-plan">✨ Create My Quit
+                  Plan</button>
+              </div>
+              <div class="chat-footer">
+                <input type="text" class="chat-input" id="chat-user-input" placeholder="Type a message privately..."
+                  aria-label="Chat input field" />
+                <button class="btn btn-primary" id="chat-send-btn"
+                  style="min-height: 36px; padding: 0 var(--space-3); font-size: var(--text-xs);"
+                  data-i18n="chat-send">Send</button>
+              </div>
+            </div>
+            <p style="font-size: var(--text-xs); color: var(--text-secondary); line-height: 1.4;"
+              data-i18n="chat-disclaimer">
+              No logs are generated on this device. Session transcripts are deleted immediately from the host connection
+              when the browser tab is closed or the "ESC" exit is triggered.
+            </p>
+          </div>
+        </div>
+
+        <!-- Right: Scheduled Phone Booking Form -->
+        <div class="card" id="schedule-call-card">
+          <div class="card-header">
+            <h3 class="card-title" data-i18n="call-title">Schedule a Private Call</h3>
+            <span class="badge badge-warning" data-i18n="call-badge">Masked Call Option</span>
+          </div>
+          <div class="card-body">
+            <form class="form-grid" id="booking-form" onsubmit="return false;">
+
+              <!-- Calendar Date Picker Selection -->
+              <div class="field">
+                <label for="call-date-picker" data-i18n="call-date-label">Select Callback Date</label>
+                <input type="date" id="call-date-picker" class="form-input"
+                  style="padding: 8px 12px; font-size: var(--text-xs);" />
+              </div>
+
+              <!-- Time Schedule Fill-In Box -->
+              <div class="field">
+                <label for="call-time-picker" data-i18n="call-time-label">Select Callback Time</label>
+                <input type="time" id="call-time-picker" class="form-input"
+                  style="padding: 8px 12px; font-size: var(--text-xs);" value="14:00" />
+              </div>
+
+              <!-- Number Input Field with required-field-feedback styling -->
+              <div class="field">
+                <label for="phone-number" data-i18n="call-phone-label">Direct Phone Number *</label>
+                <input type="tel" id="phone-number" class="form-input" required placeholder="e.g. +1 (555) 019-2834"
+                  aria-errormessage="phone-error" />
+                <div id="phone-error" class="error-msg" data-i18n="call-error">
+                  <span aria-hidden="true">❌</span> A contact number is required for booking.
+                </div>
+              </div>
+
+              <div class="field" id="intro-protocol-group">
+                <label for="intro-select" data-i18n="call-intro-label">Call Introduction Protocol</label>
+                <select id="intro-select" class="form-input" style="background-image: none;">
+                  <option value="neutral" data-i18n="opt-neutral">Neutral Callback Inquiry</option>
+                  <option value="custom" data-i18n="opt-custom">Ask for me regarding...</option>
+                </select>
+                <div id="custom-topic-wrapper" style="margin-top: 8px; display: none;">
+                  <label for="intro-custom-input"
+                    style="font-size: var(--text-xs); color: var(--text-secondary); margin-bottom: 4px; display: block;"
+                    data-i18n="custom-topic-label">Custom Call Topic</label>
+                  <input type="text" id="intro-custom-input" class="form-input"
+                    placeholder="e.g. Corporate Consulting follow-up" data-i18n-placeholder="opt-custom-placeholder" />
+                </div>
+              </div>
+
+              <!-- Submit Booking -->
+              <button class="btn btn-primary" id="submit-booking-btn" type="submit" style="width: 100%;"
+                data-i18n="call-submit-btn">
+                Book Scheduled Callback
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Compliance and reference footnote declarations -->
+    <footer>
+      <div class="footer-contact-bar">
+        <div class="contact-item">
+          <span class="contact-icon">📞</span>
+          <div>
+            <span class="contact-label" data-i18n="contact-phone-label">Hotline Phone</span>
+            <strong class="contact-value" data-i18n="contact-phone-val">1600 (Toll-Free) / +66 2 590 1000</strong>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">💬</span>
+          <div>
+            <span class="contact-label" data-i18n="contact-line-label">Official LINE ID</span>
+            <strong class="contact-value">@Quitline1600</strong>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">📍</span>
+          <div>
+            <span class="contact-label" data-i18n="contact-address-label">Headquarters</span>
+            <strong class="contact-value" data-i18n="contact-address-val">Ministry of Public Health, Nonthaburi,
+              Thailand</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-wrap">
+        <div>
+          <p data-i18n="footer-copyright">© 2026 Quitline1600 Initiative. All support guides follow evidence-based
+            parameters.</p>
+          <p style="margin-top: 4px;" data-i18n="footer-disclaimer">Data persists locally in client browser storage.
+            Server logs are disabled.</p>
+        </div>
+        <div class="footer-links">
+          <a href="#" id="privacy-policy-link" data-i18n="privacy-link">Privacy Protocol</a>
+          <a href="https://www.cdc.gov/tobacco/campaign/tips/quit-smoking/index.html" target="_blank"
+            rel="noopener noreferrer" data-i18n="cdc-link">CDC Guidelines</a>
+          <a href="https://www.who.int/initiatives/tobacco-free-initiative" target="_blank" rel="noopener noreferrer"
+            data-i18n="who-link">WHO Cessation</a>
+          <button class="btn btn-danger" id="purge-data-btn"
+            style="min-height: 36px; padding: 0 var(--space-3); font-size: var(--text-xs);" data-i18n="purge-btn">
+            Purge Session Settings
+          </button>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- Confirmations and Informational Dialog Overlays (declarative dialog standards) -->
+
+  <!-- Booking success dialog -->
+  <dialog id="booking-success-dialog">
+    <div class="modal-title" data-i18n="modal-success-title">Callback Scheduled</div>
+    <div class="modal-body" data-i18n="modal-success-body">
+      Your callback is scheduled. The counselor will dial your number at the requested window.<br /><br />
+      <strong>Security note:</strong> The call will display as "Unknown Number" and the agent will use the requested
+      introduction protocol to ensure privacy.
+    </div>
+    <div class="modal-actions">
+      <button class="btn btn-primary" commandfor="booking-success-dialog" command="close"
+        data-i18n="modal-success-ok">Understood</button>
+    </div>
+  </dialog>
+
+  <!-- Purge confirmation dialog -->
+  <dialog id="purge-confirm-dialog">
+    <div class="modal-title" data-i18n="modal-purge-title">Purge Local Footprint?</div>
+    <div class="modal-body" data-i18n="modal-purge-body">
+      This action will wipe all your custom sliders, calculated timelines, and chat history. This cannot be undone.
+    </div>
+    <div class="modal-actions">
+      <button class="btn btn-secondary" commandfor="purge-confirm-dialog" command="close" style="min-height: 36px;"
+        data-i18n="modal-purge-cancel">Cancel</button>
+      <button class="btn btn-danger" id="confirm-purge-btn" style="min-height: 36px;"
+        data-i18n="modal-purge-confirm">Confirm Wipe</button>
+    </div>
+  </dialog>
+
+  <!-- Privacy Policy details dialog -->
+  <dialog id="privacy-info-dialog">
+    <div class="modal-title" data-i18n="modal-privacy-title">Quitline1600 Privacy Protocol</div>
+    <div class="modal-body" data-i18n="modal-privacy-body">
+      To safeguard your professional reputation:<br /><br />
+      1. <strong>Local Only:</strong> Calculations and sliders are stored on your local browser machine via
+      localStorage. No details are transmitted to external databases.<br />
+      2. <strong>E2E Chat:</strong> Conversations are encrypted during transit and deleted as soon as the session
+      closes.<br />
+      3. <strong>Masked Caller:</strong> Our support agents follow a strict checklist to never disclose "Quitline1600"
+      to assistants or family answering your line.
+    </div>
+    <div class="modal-actions">
+      <button class="btn btn-primary" commandfor="privacy-info-dialog" command="close"
+        data-i18n="modal-privacy-close">Close Protocol</button>
+    </div>
+  </dialog>
+
+  <!-- Invoker Polyfill CDN Fallback -->
+  <script type="module">
+    if (!('commandForElement' in HTMLButtonElement.prototype)) {
+      import('https://esm.run/invokers-polyfill');
+    }
+  </script>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>
